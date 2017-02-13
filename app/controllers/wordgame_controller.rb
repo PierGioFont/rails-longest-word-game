@@ -1,14 +1,14 @@
 class WordgameController < ApplicationController
   def game
-    @grid = generate_grid(20)
+    @grid = generate_grid(12)
   end
 
   def score
-    start_time = params[:start_time]
     @attempt = params[:query]
     grid = params[:grid]
+    start_time = params[:start_time]
     end_time = Time.now.to_f
-    @result = run_game(@attempt, grid.split(" "), start_time.to_f, end_time)
+    @result = run_game(@attempt, grid.split(","), start_time.to_f, end_time)
   end
 
   private
