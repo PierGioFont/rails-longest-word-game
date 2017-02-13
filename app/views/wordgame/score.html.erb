@@ -1,0 +1,24 @@
+<h1 align="center">And this is your score...</h1>
+<p>Find me in app/views/wordgame/score.html.erb</p>
+
+<div class="text-center">
+  <h1>
+    Your try: <strong><%= @attempt %></strong>
+  </h1>
+</div>
+
+<div class="text-center">
+  <h1> Your result:
+    <%= @result[:score] %>
+  </h1>
+  <h1> Message from the Jury:
+    <%= @result[:message] %>
+  </h1>
+  <h1 color="red"> Your time to answer:
+    <%= @result[:time] %> sec.
+  </h1>
+</div>
+
+<div class="mylink" align="center">
+  <%= link_to "Back to a new game", 'game' %>
+</div>

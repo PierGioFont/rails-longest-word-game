@@ -1,0 +1,22 @@
+<h1 align="center">This is your Longest word game</h1>
+<p>Find me in app/views/wordgame/game.html.erb</p>
+
+<div class="text-center">
+  <ul class="list-inline">
+    <% @grid.each do |word| %>
+      <li><%= word %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="question" align="center">
+  <form action="/score">
+    <label for="question">What's your best shot ?</label>
+    <br>
+    <input type="text" id="question" name="query" placeholder="try it!">
+    <input type="submit" class="btn btn-primary" value="Check">
+    <input type="hidden" name="grid" value=<%= @grid.join(",") %> >
+    <input type="hidden" name="start_time" value="<%= Time.now.to_f %>" >
+  </form>
+</div>
+
